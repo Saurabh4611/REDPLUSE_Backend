@@ -30,10 +30,12 @@ public class UserController {
 	{
 		return service.registerUser(user);
 	}
+	@PostMapping("/helpers")
 	public List<User> getAllHelper()
 	{
 		return service.getallHelper();
 	}
+	@PostMapping("/helpers/{bloodType}")
 	public List<User> getHelperByBloodType(@PathVariable String bloodType)
 	{
 		return service.getHelpersByBloodType(bloodType);
