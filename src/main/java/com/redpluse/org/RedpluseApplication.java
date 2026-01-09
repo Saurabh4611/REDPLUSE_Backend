@@ -9,6 +9,8 @@ public class RedpluseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RedpluseApplication.class, args);
 		System.err.println("REDPLUSE IS READY FOR HELP");
+		System.err.println("❤️");
+		
 	}
 
 }
