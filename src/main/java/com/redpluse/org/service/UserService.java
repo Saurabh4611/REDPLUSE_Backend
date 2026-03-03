@@ -67,6 +67,22 @@ public class UserService {
 
 	        return user;
 	    }
+
+	 public String deletehelper(Long id) {
+		
+		 dao.deleteById(id);
+		return "Helper Deleted";
+	 }
+
+	 public List<User> getallPatient() {
+		
+		return dao.findByRole("Patient");
+	 }
+
+	 public String deletepatient(Long id) {
+		dao.deleteById(id);
+		return "Patient Deleted";
+	 }
 	 
 	
 	
