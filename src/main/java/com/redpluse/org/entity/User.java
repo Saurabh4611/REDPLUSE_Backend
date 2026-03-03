@@ -18,6 +18,8 @@ public class User {
 	@Column(unique = true)
 	private String email ;
 	private String password ;
+	
+	@Column(nullable = false)
 	private String role ;
 	private String phone ;
 	private String bloodType ;
