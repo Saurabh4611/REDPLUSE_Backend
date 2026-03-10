@@ -32,6 +32,7 @@ public class UserController {
 	@PostMapping("/register")
 	public User register(@RequestBody User user)
 	{
+		System.out.println(user.getBloodType());
 		return service.registerUser(user);
 	}
 	@GetMapping("/helpers")
@@ -83,6 +84,12 @@ public class UserController {
 	public String deletepatient(@PathVariable Long id )
 	{
 		return service.deletepatient(id);
+	}
+	
+	@GetMapping("/{id}")
+	public User getuser(@PathVariable long id)
+	{
+		return service.getuser(id);
 	}
 	
 	

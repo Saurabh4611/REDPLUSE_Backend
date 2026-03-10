@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.redpluse.org.dao.BloodRequestDao;
 import com.redpluse.org.dao.UserDao;
 import com.redpluse.org.entity.BloodRequest;
+import com.redpluse.org.entity.DonationEntity;
 import com.redpluse.org.entity.User;
 
 @Service
@@ -23,7 +24,7 @@ public class BloodRequestService {
 		
 	}
 	
-	public BloodRequest createRequest(long patientId ,BloodRequest request)
+	public BloodRequest createRequest(Long patientId ,BloodRequest request)
 	{
 		User patient = dao.findById(patientId).orElseThrow();
 		request.setPatient(patient);
@@ -35,5 +36,25 @@ public class BloodRequestService {
 	{
 		return bloodrepo.findAll();
 	}
+
+	public String deleterequest(Long patientId) {
+		bloodrepo.deleteById(patientId);
+		return "deleted request";
+	}
+
+	public BloodRequest markCompleted(Long id) {
+
+	    BloodRequest req = bloodrepo.findById(id).orElseThrow();
+
+	    req.setStatus("COMPLETED");
+	    
+	    bloodrepo.save(req);
+	    
+		return req;
+	}
+
+	
+	
+	
 
 }

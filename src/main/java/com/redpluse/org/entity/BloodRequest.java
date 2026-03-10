@@ -14,10 +14,10 @@ public class BloodRequest {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id ;
+	private Long id ;
 	
 	private String requiredBloodType ;
-	private int quantity ;
+	private Integer quantity ;
 	private String status ;
 	
 	
@@ -32,7 +32,7 @@ public class BloodRequest {
 	}
 
 
-	public BloodRequest(long id, String requiredBloodType, int quantity, String status, User patient) {
+	public BloodRequest(Long id, String requiredBloodType, Integer quantity, String status, User patient) {
 		super();
 		this.id = id;
 		this.requiredBloodType = requiredBloodType;
@@ -62,12 +62,12 @@ public class BloodRequest {
 	}
 
 
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 

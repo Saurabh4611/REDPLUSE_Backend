@@ -1,5 +1,7 @@
 package com.redpluse.org.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.redpluse.org.dao.BloodRequestDao;
@@ -36,5 +38,29 @@ public class DonationEntityService {
 	    
 	    return donaterepo.save(donate);
 	}
+
+	public DonationEntity helperDonation(long id) {
+		
+		return donaterepo.findById(id).orElseThrow();
+		
+	}
+	
+	public List<DonationEntity> getDonationByHelper(Long helperId)
+	{
+	    return donaterepo.findByHelperId(helperId);
+	}
+	public void deleteDonation(long id) {
+		donaterepo.deleteById(id);
+	}
+	
+public DonationEntity getHelper(Long requestId) {
+		
+		return donaterepo.findById(requestId).orElseThrow();
+	}
+public List<DonationEntity> getAllDonations(){
+    return donaterepo.findAll();
+}
+	
+	
 
 }

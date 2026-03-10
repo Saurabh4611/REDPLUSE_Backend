@@ -22,7 +22,7 @@ public class User {
 	@Column(nullable = false)
 	private String role ;
 	private String phone ;
-	private String bloodType ;
+	private String bloodtype ;
 	
 	
 	public User() {
@@ -39,7 +39,7 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.phone = phone;
-		this.bloodType = bloodType;
+		this.bloodtype = bloodType;
 	}
 
 
@@ -104,19 +104,19 @@ public class User {
 
 
 	public String getBloodType() {
-		return bloodType;
+		return bloodtype;
 	}
 
 
 	public void setBloodType(String bloodType) {
-		this.bloodType = bloodType;
+		this.bloodtype = bloodType;
 	}
 
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ ", phone=" + phone + ", bloodType=" + bloodType + "]";
+				+ ", phone=" + phone + ", bloodType=" + bloodtype + "]";
 	}
 	
 	

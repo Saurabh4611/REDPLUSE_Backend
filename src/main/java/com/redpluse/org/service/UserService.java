@@ -31,7 +31,7 @@ public class UserService {
 	
 	public List<User> getallHelper()
 	{
-		return dao.findByRole("HELPERS");
+		return dao.findByRole("helper");
 	}
 	
 	public List<User> getHelpersByBloodType(String bloodType)
@@ -82,6 +82,11 @@ public class UserService {
 	 public String deletepatient(Long id) {
 		dao.deleteById(id);
 		return "Patient Deleted";
+	 }
+
+	 public User getuser(long id) {
+		
+		return dao.findById(id).orElseThrow();
 	 }
 	 
 	

@@ -16,7 +16,7 @@ public class DonationEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id ;	
+   private Long id ;	
 	
 	@OneToOne
 	@JoinColumn(name = "blood_request_id")

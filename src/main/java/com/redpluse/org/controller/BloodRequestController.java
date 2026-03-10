@@ -3,9 +3,11 @@ package com.redpluse.org.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +28,7 @@ public class BloodRequestController {
 	}
 	
 	@PostMapping("/create/{patientId}")
-	public BloodRequest createRequest(@PathVariable long patientId , @RequestBody BloodRequest request)
+	public BloodRequest createRequest(@PathVariable Long patientId , @RequestBody BloodRequest request)
 	{
 		return service.createRequest(patientId, request);
 	}
@@ -36,5 +38,18 @@ public class BloodRequestController {
 	{
 		return service.getAllRequests();
 	}
+
+	@DeleteMapping("/deleterequest/{patientId}")
+	public String deleterequest(@PathVariable Long patientId)
+	{
+		return service.deleterequest(patientId);
+	}
+	@PutMapping("/complete/{id}")
+	public BloodRequest markCompleted(@PathVariable Long id) {
+
+	   
+	    return service.markCompleted(id);
+	}
+	
 
 }

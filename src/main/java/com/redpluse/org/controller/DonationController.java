@@ -1,6 +1,12 @@
 package com.redpluse.org.controller;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,5 +33,27 @@ public class DonationController {
 	{
 		return service.assignHelper(requestid, helperid);
 	}
+	
+	//http://localhost:8080/Redpluse/donation/helper/${helperId}
+	@GetMapping("/helper/{helperId}")
+	public List<DonationEntity> getDonationByHelper(@PathVariable Long helperId)
+	{
+	    return service.getDonationByHelper(helperId);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> deleteDonation(@PathVariable long id){
+	    service.deleteDonation(id);
+	    return ResponseEntity.ok("Deleted");
+	}
+	@GetMapping("/request/helper/{requestId}")
+	public DonationEntity getHelper(@PathVariable Long requestId) {
+	    return service.getHelper(requestId);
+	}
+	@GetMapping("/all")
+	public List<DonationEntity> getAllDonations(){
+	    return service.getAllDonations();
+	}
+	
 
 }
