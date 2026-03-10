@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/Redpluse/chat")
-@CrossOrigin("*")
+@CrossOrigin(origins = "https://redpluse.netlify.app/")
 public class ChatController {
 
 @PostMapping
