@@ -19,7 +19,8 @@ import com.redpluse.org.service.UserService;
 
 @RestController
 @RequestMapping("/Redpluse/users")
-@CrossOrigin(origins = "https://redpluse.netlify.app/")
+@CrossOrigin(origins = {"https://redpluse.netlify.app/","https://redpluse.online/"})
+
 public class UserController {
 	
 	private final UserService service ;

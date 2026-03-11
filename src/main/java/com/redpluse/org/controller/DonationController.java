@@ -17,7 +17,8 @@ import com.redpluse.org.service.DonationEntityService;
 
 @RestController
 @RequestMapping("/Redpluse/donation")
-@CrossOrigin(origins = "https://redpluse.netlify.app/")
+@CrossOrigin(origins = {"https://redpluse.netlify.app/","https://redpluse.online/"})
+
 public class DonationController {
 	
 	public final DonationEntityService service ;

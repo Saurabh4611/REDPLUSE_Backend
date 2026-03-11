@@ -17,7 +17,8 @@ import com.redpluse.org.service.BloodRequestService;
 
 @RestController
 @RequestMapping("/Redpluse/request")
-@CrossOrigin(origins = "https://redpluse.netlify.app/")
+@CrossOrigin(origins = {"https://redpluse.netlify.app/","https://redpluse.online/"})
+
 public class BloodRequestController {
 	
 	private final BloodRequestService service ;
