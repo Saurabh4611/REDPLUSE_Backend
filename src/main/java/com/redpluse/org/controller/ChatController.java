@@ -30,7 +30,7 @@ reply="Patients can create blood request from dashboard.";
 else if(msg.contains("hello")){
 reply="Hello! I am RedPluse AI assistant. How can I help?";
 }
-if(msg.contains("need")){
+else if(msg.contains("need")){
 reply="Sign up as Patient Helpers will help you";
 }
 else{
